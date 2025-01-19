@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Kaynağı Optimizasyonu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body data-page="suOptimizasyon">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Portföyüm</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eto-hesaplama.html">ET0 Hesaplama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="su-optimizasyon.html">Su Optimizasyonu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="text-center mb-4">Su Kaynağı Optimizasyonu</h2>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h5>Su Kaynağı Bilgileri</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <label>Toplam Su Kapasitesi (m³/yıl)</label>
+                            <input type="number" id="suKapasitesi" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Toplam Sulama Alanı (dekar)</label>
+                            <input type="number" id="toplamAlan" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Bitki Beyanları</h5>
+                        <button class="btn btn-sm btn-primary float-end" id="yeniBeyanEkle">
+                            + Yeni Beyan Ekle
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div id="beyanlar">
+                            <!-- Beyanlar buraya eklenecek -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Optimizasyon Sonuçları</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="sonuclar"></div>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h5>Öneriler</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="oneriler"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button class="btn btn-primary" id="optimizasyonYap">Optimizasyon Yap</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="irrigation.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Sayfa yüklendiğinde ilk beyanı ekle
+        IrrigationApp.init.suOptimizasyon();
+    });
+    </script>
+</body>
+</html> 

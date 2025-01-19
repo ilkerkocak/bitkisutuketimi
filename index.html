@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankara Sulama Planlaması</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body data-page="anaSayfa">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Portföyüm</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eto-hesaplama.html">ET0 Hesaplama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="su-optimizasyon.html">Su Optimizasyonu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana Sayfa İçeriği -->
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center mb-4">Ankara Sulama Planlaması</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="bitkiSecimi">Bitki Seçimi:</label>
+                    <select class="form-control" id="bitkiSecimi">
+                        <optgroup label="Yağmurlama Sulama">
+                            <option value="bugday">Buğday</option>
+                            <option value="arpa">Arpa</option>
+                            <option value="yulaf">Yulaf</option>
+                            <option value="sekerpancari">Şeker Pancarı</option>
+                        </optgroup>
+                        <optgroup label="Damla Sulama">
+                            <option value="silajlikmisir">Silajlık Mısır</option>
+                            <option value="danemisir">Dane Mısır</option>
+                            <option value="domates" selected>Domates</option>
+                            <option value="salatalik">Salatalık</option>
+                            <option value="biber">Biber</option>
+                            <option value="aycicegi">Ayçiçeği</option>
+                            <option value="fasulye">Fasulye</option>
+                            <option value="karnabahar">Karnabahar</option>
+                            <option value="lahana">Lahana</option>
+                            <option value="brokoli">Brokoli</option>
+                            <option value="kivircik">Kıvırcık Marul</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="toprakTipi">Toprak Tipi:</label>
+                    <select class="form-control" id="toprakTipi">
+                        <option value="hafif">Hafif Toprak (Kumlu)</option>
+                        <option value="orta">Orta Bünyeli Toprak (Tınlı)</option>
+                        <option value="agir">Ağır Toprak (Killi)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button class="btn btn-primary" onclick="hesaplaSulamaProgrami()">Hesapla</button>
+        </div>
+
+        <div id="sonuclar" class="mt-4">
+            <!-- Sonuçlar buraya gelecek -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

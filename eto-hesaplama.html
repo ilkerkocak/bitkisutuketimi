@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETo Hesaplama (FAO Penman-Monteith)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body data-page="etoHesaplama">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Portföyüm</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="eto-hesaplama.html">ET0 Hesaplama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="su-optimizasyon.html">Su Optimizasyonu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="text-center mb-4">ETo Hesaplama (FAO Penman-Monteith)</h2>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Ankara İçin ETo Hesaplama</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <label>Ay Seçimi</label>
+                            <select class="form-control" id="ay-secimi">
+                                <option value="0">Ocak</option>
+                                <option value="1">Şubat</option>
+                                <option value="2">Mart</option>
+                                <option value="3">Nisan</option>
+                                <option value="4">Mayıs</option>
+                                <option value="5">Haziran</option>
+                                <option value="6">Temmuz</option>
+                                <option value="7">Ağustos</option>
+                                <option value="8">Eylül</option>
+                                <option value="9">Ekim</option>
+                                <option value="10">Kasım</option>
+                                <option value="11">Aralık</option>
+                            </select>
+                        </div>
+                        <div class="alert alert-info">
+                            <h6>Sabit Değerler (Ankara):</h6>
+                            <ul class="mb-0">
+                                <li>Enlem: 39.57°</li>
+                                <li>Rakım: 891 m</li>
+                                <li>Gün: Ayın 15'i</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary" id="hesaplaBtn">Hesapla</button>
+                        <button class="btn btn-secondary ms-2" id="karsilastirBtn">Hesaplamaları Karşılaştır</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Sonuçlar</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="sonuclar"></div>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h5>Kullanılan İklim Verileri</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="iklim-verileri"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="irrigation.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Hesapla butonu için event listener
+        document.querySelector('button[id="hesaplaBtn"]')
+            .addEventListener('click', () => IrrigationApp.etoHesaplama.hesaplaEToAnkara());
+        
+        // Karşılaştır butonu için event listener
+        document.querySelector('button[id="karsilastirBtn"]')
+            .addEventListener('click', () => IrrigationApp.etoHesaplama.karsilastirHesaplamalar());
+    });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,36 @@
+.container {
+    max-width: 900px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.card {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    color: #007bff;
+}
+
+.ay-ozet:hover {
+    background-color: #e9ecef !important;
+}
+
+.gunluk-detay td {
+    padding: 0;
+}
+
+.gunluk-detay .table {
+    margin: 0;
+}
+
+.gunluk-detay .table-bordered {
+    border: none;
+}
+
+.ay-ozet i {
+    margin-right: 8px;
+    width: 12px;
+} 
